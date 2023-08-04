@@ -28,7 +28,10 @@ services:
       - node-network
 
   nginx:
-    image: victhorsuzart/nginx_node:prod
+    build:
+      context: nginx
+      dockerfile: ./Dockerfile.prod
+    tty: true
     container_name: nginx
     networks:
       - node-network
